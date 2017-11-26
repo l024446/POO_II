@@ -15,6 +15,11 @@ public class ProjetoFlorDoNorte {
     /**
      * @param args the command line arguments
      */
+    
+    public static void encerrar(){
+        
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
