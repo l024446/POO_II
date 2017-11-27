@@ -15,8 +15,8 @@ package projeto.flor.pkgdo.norte;
 public class ClienteFisico extends Cliente{
     private final int cpf;
 
-    public ClienteFisico(String nome, String endereço, String telefone, int cpf) {
-        super(nome, endereço, telefone);
+    public ClienteFisico(int id, String nome, String endereço, String telefone, String celular, String email, int cpf) {
+        super(id, nome, endereço, telefone, celular, email);
         this.cpf = cpf;
     }
 

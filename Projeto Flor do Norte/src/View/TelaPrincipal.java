@@ -49,6 +49,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jDesktopPane1.setAutoscrolls(true);
+
         jmPrincipal.setText("Principal");
         jmPrincipal.setPreferredSize(new java.awt.Dimension(150, 21));
         jmPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +118,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         sobreSistema.setText("Sobre o sistema");
+        sobreSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobreSistemaActionPerformed(evt);
+            }
+        });
         jMenu2.add(sobreSistema);
 
         jMenuBar1.add(jMenu2);
@@ -126,17 +133,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 647, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
         );
 
         pack();
@@ -147,8 +148,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_novoCadastroActionPerformed
 
     private void jmPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmPrincipalActionPerformed
-        TelaCadastroCliente telacadastro; 
-        telacadastro = new TelaCadastroCliente();
+        TelaCadastroUsuario telacadastro; 
+        telacadastro = new TelaCadastroUsuario();
         jDesktopPane1.add(telacadastro);
         telacadastro.setVisible(true);
     }//GEN-LAST:event_jmPrincipalActionPerformed
@@ -158,9 +159,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        new TelaAjuda().setVisible(true);
 
     }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void sobreSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobreSistemaActionPerformed
+        
+        new TelaAjuda().setVisible(true);
+
+    }//GEN-LAST:event_sobreSistemaActionPerformed
 
     /**
      * @param args the command line arguments

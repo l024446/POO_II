@@ -12,7 +12,7 @@ package projeto.flor.pkgdo.norte;
  * ções e informações necessárias para pagamento.
  * @author l024446
  */
-public class Funcionario {
+public class Colaborador {
     private int id; 
     private String nome;
     private String endereço;
@@ -65,7 +65,7 @@ public class Funcionario {
     }
     
      
-    public Funcionario(String nome, String endereço, String cpf, int idgerente, String dadosbancarios){
+    public Colaborador(String nome, String endereço, String cpf, int idgerente, String dadosbancarios){
         this.nome = nome;
         this.endereço = endereço;
         this.cpf = cpf;

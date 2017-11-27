@@ -58,7 +58,7 @@ public class Agenda {
             this.agenda((Iterator<Agenda>) dia).setServico(novoservico);
             }            
     }    
-    public void alteraDia(DiaDaAgenda dia, Funcionario novofuncionario){
+    public void alteraDia(DiaDaAgenda dia, Colaborador novofuncionario){
         if (this.agenda.contains(dia)){
             this.agenda((Iterator<Agenda>) dia).setFuncionario(novofuncionario);
         }

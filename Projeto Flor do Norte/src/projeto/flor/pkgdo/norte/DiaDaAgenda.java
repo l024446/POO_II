@@ -16,10 +16,10 @@ import java.util.Date;
 public class DiaDaAgenda {
     private Date data;
     private Cliente cliente;
-    private Funcionario funcionario;
+    private Colaborador funcionario;
     private Servico servico;
 
-    public DiaDaAgenda(Date data, Cliente cliente, Funcionario funcionario, Servico servico) {
+    public DiaDaAgenda(Date data, Cliente cliente, Colaborador funcionario, Servico servico) {
         this.data = data;
         this.cliente = cliente;
         this.funcionario = funcionario;
@@ -42,11 +42,11 @@ public class DiaDaAgenda {
         this.cliente = cliente;
     }
 
-    public Funcionario getFuncionario() {
+    public Colaborador getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionario funcionario) {
+    public void setFuncionario(Colaborador funcionario) {
         this.funcionario = funcionario;
     }
 

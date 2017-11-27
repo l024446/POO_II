@@ -12,8 +12,6 @@ import java.io.Serializable;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Date;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -27,12 +25,7 @@ public class Archive implements Serializable{
     private static final Logger LOG = Logger.getLogger(Archive.class.getName());
     private final Path arquivoSerializado;
     private static final String SERIAL_FILENAME = "flor_do_norte.dat";
-    private Map<Integer, Funcionario> listaFuncionario;
-    private Map<Integer, Cliente> listaCliente;
-    private Map<Integer, Produto> listaProduto;
-    private Map<Date, Agenda> listaAgenda;
-    private Map<Integer, Servico> listaServico;
-    
+     
     /*Todos os dados serão guardados em mapas, a chave de acesso dos mapas serão
     os IDs de cada um dos objetos.
     A classe irá verificar a existência de um arquivo serializado para resgatar 
@@ -44,23 +37,23 @@ public class Archive implements Serializable{
     }
     
     
-    public Archive load() throws IOException {
+    public ColecoesDeDados load() throws IOException {
         if (Files.exists(arquivoSerializado)) {
             LOG.log(Level.INFO, "Usando {0}", arquivoSerializado.toString());
             return loadSerialized();
         } else {
             LOG.info("Criando novo arquivo para gerencamento de dados.");
-            return new Archive();
+            return new ColecoesDeDados();
         }
     }
 
            
-    private Archive loadSerialized() throws IOException {
+    private ColecoesDeDados loadSerialized() throws IOException {
         ObjectInputStream is;
-        Archive dados = null;
+        ColecoesDeDados dados = null;
         try {
             is = new ObjectInputStream(Files.newInputStream(arquivoSerializado));
-            dados = (Archive) is.readObject();
+            dados = (ColecoesDeDados) is.readObject();
         } catch (ClassNotFoundException | IOException ex) {
             LOG.log(Level.SEVERE, "loadSerialized", ex);
         }

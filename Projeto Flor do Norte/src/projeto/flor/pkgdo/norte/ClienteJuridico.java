@@ -22,8 +22,8 @@ public class ClienteJuridico extends Cliente{
      * @param endereço
      * @param telefone
      */
-    public ClienteJuridico(int cnpj, String nome, String endereço, String telefone) {
-        super(nome, endereço, telefone);
+    public ClienteJuridico(int id, String nome, String endereço, String telefone, String celular, String email, int cnpj) {
+        super(id, nome, endereço, telefone, celular, email);
         this.cnpj = cnpj;
     }
 
