@@ -6,6 +6,7 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
 import projeto.flor.pkgdo.norte.ProjetoFlorDoNorte;
 
 /**
@@ -37,12 +38,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sair = new javax.swing.JMenuItem();
         jmCliente = new javax.swing.JMenu();
         atualizarCadastro = new javax.swing.JMenuItem();
-        solicitarNovoServico = new javax.swing.JMenuItem();
         exibirAgenda = new javax.swing.JMenuItem();
         sairCliente = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         atualizarCadastroColaborador = new javax.swing.JMenuItem();
-        cancelaServico = new javax.swing.JMenuItem();
         exibirAgendaColaborador = new javax.swing.JMenuItem();
         sairColaborador = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -77,15 +76,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jmPrincipal);
 
         jmCliente.setText("Cliente");
+        jmCliente.setEnabled(false);
+        jmCliente.setFocusable(false);
         jmCliente.setPreferredSize(new java.awt.Dimension(150, 21));
 
         atualizarCadastro.setText("Atualizar Cadastro");
         jmCliente.add(atualizarCadastro);
 
-        solicitarNovoServico.setText("Solicitar Novo Serviço");
-        jmCliente.add(solicitarNovoServico);
-
-        exibirAgenda.setText("Exibir Agenda");
+        exibirAgenda.setText("Agenda de Serviços");
         jmCliente.add(exibirAgenda);
 
         sairCliente.setText("Sair");
@@ -94,15 +92,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jmCliente);
 
         jMenu1.setText("Colaborador");
+        jMenu1.setEnabled(false);
+        jMenu1.setFocusable(false);
         jMenu1.setPreferredSize(new java.awt.Dimension(150, 21));
 
         atualizarCadastroColaborador.setText("Atualizar Cadastro");
         jMenu1.add(atualizarCadastroColaborador);
 
-        cancelaServico.setText("Cancelar Serviço");
-        jMenu1.add(cancelaServico);
-
-        exibirAgendaColaborador.setText("Exibir Agenda");
+        exibirAgendaColaborador.setText("Agenda de Serviços");
         jMenu1.add(exibirAgendaColaborador);
 
         sairColaborador.setText("Sair");
@@ -112,6 +109,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Ajuda");
         jMenu2.setPreferredSize(new java.awt.Dimension(150, 21));
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         sobreSistema.setText("Sobre o sistema");
         jMenu2.add(sobreSistema);
@@ -155,6 +157,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ProjetoFlorDoNorte.encerrar();
     }//GEN-LAST:event_sairActionPerformed
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        new TelaAjuda().setVisible(true);
+
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -193,7 +200,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem atualizarCadastro;
     private javax.swing.JMenuItem atualizarCadastroColaborador;
-    private javax.swing.JMenuItem cancelaServico;
     private javax.swing.JMenuItem exibirAgenda;
     private javax.swing.JMenuItem exibirAgendaColaborador;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -207,6 +213,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem sairCliente;
     private javax.swing.JMenuItem sairColaborador;
     private javax.swing.JMenuItem sobreSistema;
-    private javax.swing.JMenuItem solicitarNovoServico;
     // End of variables declaration//GEN-END:variables
 }
