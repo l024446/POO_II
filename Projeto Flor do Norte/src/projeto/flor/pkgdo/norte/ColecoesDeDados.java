@@ -6,17 +6,8 @@
  */
 package projeto.flor.pkgdo.norte;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Date;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static jdk.nashorn.internal.runtime.Debug.id;
 /**
  ** A classe Archive vai ser responsável pelo arquivamento das coleções de dados
  * necessárias para o funcionamento do sistema. Ela irá criar e controlar o aces
@@ -26,9 +17,9 @@ import static jdk.nashorn.internal.runtime.Debug.id;
 public class ColecoesDeDados implements Serializable{
 
     private Map<Integer, Colaborador> listaColaborador;
-    private Map<Integer, Cliente> listaCliente;
-    private Map<Date, Agenda> listaAgenda;
-    private Map<Integer, Servico> listaServico;
+    private Map<Integer, ClienteFisico> listaClienteFisico;
+    private Map<Integer, ClienteJuridico> listaClienteJuridico;
+    private Map<Integer, Agenda> listaAgenda;
     
     public Colaborador getColaborador(Integer id) {
         return listaColaborador.get(id);
@@ -46,23 +37,72 @@ public class ColecoesDeDados implements Serializable{
         }
     }
     
-    public Cliente getCliente(Integer id) {
-        return listaCliente.get(id);
+    public Cliente getClienteFisico(Integer id) {
+        return listaClienteFisico.get(id);
     }
 
-    public void setCliente(Integer id, Cliente cliente) {
-        listaCliente.replace(id, cliente);
+    public void setClienteFisico(Integer id, ClienteFisico cliente) {
+        listaClienteFisico.replace(id, cliente);
     }
     
-    public void addCliente(Integer id, Cliente cliente){
-        if (listaCliente.containsKey(id)){
+    public void addClienteFisico(Integer id, ClienteFisico cliente){
+        if (listaClienteFisico.containsKey(id)){
             //incluir erro de chave já utilizada.            
         }else{
-            listaCliente.put(id, cliente);
+            listaClienteFisico.put(id, cliente);
         }
     }
+ 
+    public Cliente getClienteJuridico(Integer id) {
+        return listaClienteJuridico.get(id);
+    }
 
-  
+    public void setClienteJuridico(Integer id, ClienteJuridico cliente) {
+        listaClienteJuridico.replace(id, cliente);
+    }
+    
+    public void addClienteJuridico(Integer id, ClienteJuridico cliente){
+        if (listaClienteJuridico.containsKey(id)){
+            //incluir erro de chave já utilizada.            
+        }else{
+            listaClienteJuridico.put(id, cliente);
+        }
+    }
+ 
+    /**
+     *
+     * @param id
+     * @param cliente
+     */
+    public void addClienteFisico(Integer id, ClienteJuridico cliente){
+        if (listaClienteJuridico.containsKey(id)){
+            //incluir erro de chave já utilizada.            
+        }else{
+            listaClienteJuridico.put(id, cliente);
+        }
+    }
+    /**
+     *
+     * @param id
+     * @return
+     */
+    
+    public Agenda getAgenda(Integer id) {
+        return listaAgenda.get(id);
+    }
+
+    public void setAgeda (Integer id, Agenda agenda) {
+        listaAgenda.replace(id, agenda);
+    }
+    
+    public void addAgenda(Integer id, Agenda agenda){
+        if (listaAgenda.containsKey(id)){
+            //incluir erro de chave já utilizada.            
+        }else{
+            listaAgenda.put(id, agenda);
+        }
+    }
+    
     
     /*Todos os dados serão guardados em mapas, a chave de acesso dos mapas serão
     os IDs de cada um dos objetos.

@@ -13,35 +13,17 @@ package projeto.flor.pkgdo.norte;
  * @author l024446
  */
 public class Colaborador {
+
     private int id; 
+    private int cpf;
     private String nome;
     private String endereço;
-    private final String cpf;
-    private String dadosbancarios;
-
-    public String getDadosbancarios() {
-        return dadosbancarios;
-    }
-
-    public void setDadosbancarios(String dadosbancarios) {
-        this.dadosbancarios = dadosbancarios;
-    }
-    private int idgerente;
-
-    public int getIdgerente() {
-        return idgerente;
-    }
-
-    public void setIdgerente(int idgerente) {
-        this.idgerente = idgerente;
-    }
+    private String telefone;
+    private String celular;
+    private String email;
 
     public int getId() {
         return id;
-    }
-
-    public String getCpf() {
-        return cpf;
     }
 
     public void setId(int id) {
@@ -63,14 +45,44 @@ public class Colaborador {
     public void setEndereço(String endereço) {
         this.endereço = endereço;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
-     
-    public Colaborador(String nome, String endereço, String cpf, int idgerente, String dadosbancarios){
+    public int getCpf(){
+        return cpf;
+    }
+
+    public Colaborador (int id, String nome, String endereço, String telefone, String celular, String email, int cpf) {
+        this.id = id;
         this.nome = nome;
         this.endereço = endereço;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.email = email;
         this.cpf = cpf;
-        this.idgerente = idgerente;
-        this.dadosbancarios = dadosbancarios;
     }
+
        
 }
