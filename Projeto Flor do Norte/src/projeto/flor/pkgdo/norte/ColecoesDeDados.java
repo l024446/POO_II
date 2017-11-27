@@ -20,6 +20,36 @@ public class ColecoesDeDados implements Serializable{
     private Map<Integer, ClienteFisico> listaClienteFisico;
     private Map<Integer, ClienteJuridico> listaClienteJuridico;
     private Map<Integer, Agenda> listaAgenda;
+    private Integer idColaborador;
+    private Integer idCliente;
+    private Integer idAgenda;
+
+    public Integer getIdColaborador() {
+        return idColaborador;
+    }
+
+    public void setIdColaborador(Integer idColaborador) {
+        this.idColaborador = idColaborador;
+    }
+
+    
+    public Integer getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Integer idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    
+    public Integer getIdAgenda() {
+        return idAgenda;
+    }
+
+    public void setIdAgenda(Integer idAgenda) {
+        this.idAgenda = idAgenda;
+    }
+
     
     public Colaborador getColaborador(Integer id) {
         return listaColaborador.get(id);
@@ -36,8 +66,9 @@ public class ColecoesDeDados implements Serializable{
             listaColaborador.put(id, colaborador);
         }
     }
+
     
-    public Cliente getClienteFisico(Integer id) {
+    public ClienteFisico getClienteFisico(Integer id) {
         return listaClienteFisico.get(id);
     }
 
@@ -52,8 +83,9 @@ public class ColecoesDeDados implements Serializable{
             listaClienteFisico.put(id, cliente);
         }
     }
- 
-    public Cliente getClienteJuridico(Integer id) {
+
+    
+    public ClienteJuridico getClienteJuridico(Integer id) {
         return listaClienteJuridico.get(id);
     }
 
@@ -69,24 +101,7 @@ public class ColecoesDeDados implements Serializable{
         }
     }
  
-    /**
-     *
-     * @param id
-     * @param cliente
-     */
-    public void addClienteFisico(Integer id, ClienteJuridico cliente){
-        if (listaClienteJuridico.containsKey(id)){
-            //incluir erro de chave já utilizada.            
-        }else{
-            listaClienteJuridico.put(id, cliente);
-        }
-    }
-    /**
-     *
-     * @param id
-     * @return
-     */
-    
+
     public Agenda getAgenda(Integer id) {
         return listaAgenda.get(id);
     }

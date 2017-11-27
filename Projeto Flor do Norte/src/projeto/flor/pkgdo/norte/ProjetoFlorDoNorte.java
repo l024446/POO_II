@@ -6,6 +6,9 @@
  */
 package projeto.flor.pkgdo.norte;
 
+import View.TelaPrincipal;
+import java.io.IOException;
+
 /**
  *
  * @author l024446
@@ -20,8 +23,19 @@ public class ProjetoFlorDoNorte {
         
     }
     
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws IOException {
+        Archive gerenciador;
+        gerenciador = new Archive();
+        ColecoesDeDados arquivos;
+        arquivos = gerenciador.load();
+        
+             
+        TelaPrincipal tela;
+        tela = new TelaPrincipal();
+        tela.setDefaultCloseOperation(TelaPrincipal.EXIT_ON_CLOSE);
+        tela.pack();
+        tela.setVisible(true);
+        
     }
     
 }

@@ -6,6 +6,7 @@
  */
 package View;
 
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import projeto.flor.pkgdo.norte.ProjetoFlorDoNorte;
 
@@ -37,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         novoCadastro = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenuItem();
         jmCliente = new javax.swing.JMenu();
-        atualizarCadastro = new javax.swing.JMenuItem();
+        atualizarCadastroCliente = new javax.swing.JMenuItem();
         exibirAgenda = new javax.swing.JMenuItem();
         sairCliente = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -68,6 +69,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmPrincipal.add(novoCadastro);
 
         sair.setText("Sair");
+        sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sairMouseClicked(evt);
+            }
+        });
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairActionPerformed(evt);
@@ -82,8 +88,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmCliente.setFocusable(false);
         jmCliente.setPreferredSize(new java.awt.Dimension(150, 21));
 
-        atualizarCadastro.setText("Atualizar Cadastro");
-        jmCliente.add(atualizarCadastro);
+        atualizarCadastroCliente.setText("Atualizar Cadastro");
+        atualizarCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarCadastroClienteActionPerformed(evt);
+            }
+        });
+        jmCliente.add(atualizarCadastroCliente);
 
         exibirAgenda.setText("Agenda de Serviços");
         jmCliente.add(exibirAgenda);
@@ -144,14 +155,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void novoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoCadastroActionPerformed
-        // TODO add your handling code here:
+        TelaCadastroUsuario telacadastro; 
+        telacadastro = new TelaCadastroUsuario();
+        Component add = jDesktopPane1.add(telacadastro);
+        telacadastro.setVisible(true);
     }//GEN-LAST:event_novoCadastroActionPerformed
 
     private void jmPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmPrincipalActionPerformed
-        TelaCadastroUsuario telacadastro; 
-        telacadastro = new TelaCadastroUsuario();
-        jDesktopPane1.add(telacadastro);
-        telacadastro.setVisible(true);
     }//GEN-LAST:event_jmPrincipalActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
@@ -167,6 +177,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         new TelaAjuda().setVisible(true);
 
     }//GEN-LAST:event_sobreSistemaActionPerformed
+
+    private void atualizarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarCadastroClienteActionPerformed
+        TelaDadosCliente telaCliente; 
+        telaCliente = new TelaDadosCliente();
+        Component add = jDesktopPane1.add(telaCliente);
+        telaCliente.setVisible(true);
+    }//GEN-LAST:event_atualizarCadastroClienteActionPerformed
+
+    private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
+        
+
+    }//GEN-LAST:event_sairMouseClicked
 
     /**
      * @param args the command line arguments
@@ -204,7 +226,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem atualizarCadastro;
+    private javax.swing.JMenuItem atualizarCadastroCliente;
     private javax.swing.JMenuItem atualizarCadastroColaborador;
     private javax.swing.JMenuItem exibirAgenda;
     private javax.swing.JMenuItem exibirAgendaColaborador;
