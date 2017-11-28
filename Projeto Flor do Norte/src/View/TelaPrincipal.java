@@ -7,8 +7,8 @@
 package View;
 
 import java.awt.Component;
-import javax.swing.JOptionPane;
-import projeto.flor.pkgdo.norte.ProjetoFlorDoNorte;
+import projeto.flor.pkgdo.norte.Archive;
+import projeto.flor.pkgdo.norte.ColecoesDeDados;
 
 /**
  *
@@ -19,6 +19,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
+    
     public TelaPrincipal() {
         initComponents();
     }
@@ -165,7 +166,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmPrincipalActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
-        ProjetoFlorDoNorte.encerrar();
+
+
     }//GEN-LAST:event_sairActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed

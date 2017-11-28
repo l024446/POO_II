@@ -24,12 +24,12 @@ public class ProjetoFlorDoNorte {
     }
     
     public static void main(String[] args) throws IOException {
+    
         Archive gerenciador;
         gerenciador = new Archive();
         ColecoesDeDados arquivos;
         arquivos = gerenciador.load();
-        
-             
+
         TelaPrincipal tela;
         tela = new TelaPrincipal();
         tela.setDefaultCloseOperation(TelaPrincipal.EXIT_ON_CLOSE);

@@ -58,6 +58,11 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
         Salvar.setText("Salvar");
 
         Voltar.setText("Voltar");
+        Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados de Contato"));
 
@@ -210,6 +215,11 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
 
         tipoUsuario.add(rbCliente);
         rbCliente.setText("Cliente");
+        rbCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbClienteActionPerformed(evt);
+            }
+        });
 
         tipoUsuario.add(rbColaborador);
         rbColaborador.setText("Colaborador");
@@ -289,6 +299,19 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
             tfCnpj.setEditable(false);
         }
     }//GEN-LAST:event_rbCpfActionPerformed
+
+    private void rbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbClienteActionPerformed
+        if(rbCliente.isSelected()){
+            rbCpf.setEnabled(true);
+            rbCpf.setFocusable(true);
+            rbCnpj.setEnabled(true);
+            rbCnpj.setFocusable(true);            
+        }
+    }//GEN-LAST:event_rbClienteActionPerformed
+
+    private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_VoltarActionPerformed
 
     private void rbCliente(java.awt.event.ActionEvent evt) {                                      
 
