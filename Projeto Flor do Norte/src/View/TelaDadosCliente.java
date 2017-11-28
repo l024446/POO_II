@@ -184,6 +184,11 @@ public class TelaDadosCliente extends javax.swing.JInternalFrame {
         Salvar.setText("Salvar");
 
         Voltar.setText("Voltar");
+        Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,6 +228,11 @@ public class TelaDadosCliente extends javax.swing.JInternalFrame {
             tfEndereco.requestFocus();
         }
     }//GEN-LAST:event_tfNomeKeyTyped
+
+    private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
+        this.dispose();
+
+    }//GEN-LAST:event_VoltarActionPerformed
     
     private void tfEndereco(java.awt.event.KeyEvent evt) {                                
     
