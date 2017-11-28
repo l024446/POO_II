@@ -85,8 +85,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jmPrincipal);
 
         jmCliente.setText("Cliente");
-        jmCliente.setEnabled(false);
-        jmCliente.setFocusable(false);
         jmCliente.setPreferredSize(new java.awt.Dimension(150, 21));
 
         atualizarCadastroCliente.setText("Atualizar Cadastro");
@@ -98,25 +96,48 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmCliente.add(atualizarCadastroCliente);
 
         exibirAgenda.setText("Agenda de Serviços");
+        exibirAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirAgendaActionPerformed(evt);
+            }
+        });
         jmCliente.add(exibirAgenda);
 
         sairCliente.setText("Sair");
+        sairCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairClienteActionPerformed(evt);
+            }
+        });
         jmCliente.add(sairCliente);
 
         jMenuBar1.add(jmCliente);
 
         jMenu1.setText("Colaborador");
-        jMenu1.setEnabled(false);
-        jMenu1.setFocusable(false);
         jMenu1.setPreferredSize(new java.awt.Dimension(150, 21));
 
         atualizarCadastroColaborador.setText("Atualizar Cadastro");
+        atualizarCadastroColaborador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarCadastroColaboradorActionPerformed(evt);
+            }
+        });
         jMenu1.add(atualizarCadastroColaborador);
 
         exibirAgendaColaborador.setText("Agenda de Serviços");
+        exibirAgendaColaborador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirAgendaColaboradorActionPerformed(evt);
+            }
+        });
         jMenu1.add(exibirAgendaColaborador);
 
         sairColaborador.setText("Sair");
+        sairColaborador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairColaboradorActionPerformed(evt);
+            }
+        });
         jMenu1.add(sairColaborador);
 
         jMenuBar1.add(jMenu1);
@@ -166,8 +187,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmPrincipalActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
-
-
+            System.exit(0); 
     }//GEN-LAST:event_sairActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
@@ -191,6 +211,38 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_sairMouseClicked
+
+    private void exibirAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirAgendaActionPerformed
+        AgendaServicosCliente telaAgendaCliente; 
+        telaAgendaCliente = new AgendaServicosCliente();
+        Component add = jDesktopPane1.add(telaAgendaCliente);
+        telaAgendaCliente.setVisible(true);
+    }//GEN-LAST:event_exibirAgendaActionPerformed
+
+    private void sairClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairClienteActionPerformed
+            System.exit(0); 
+    }//GEN-LAST:event_sairClienteActionPerformed
+
+    private void atualizarCadastroColaboradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarCadastroColaboradorActionPerformed
+
+        TelaDadosColaborador telaColaborador; 
+        telaColaborador = new TelaDadosColaborador();
+        Component add = jDesktopPane1.add(telaColaborador);
+        telaColaborador.setVisible(true);
+
+    }//GEN-LAST:event_atualizarCadastroColaboradorActionPerformed
+
+    private void exibirAgendaColaboradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirAgendaColaboradorActionPerformed
+        // TODO add your handling code here:
+        AgendaServicosColaborador telaAgendaColaborador; 
+        telaAgendaColaborador = new AgendaServicosColaborador();
+        Component add = jDesktopPane1.add(telaAgendaColaborador);
+        telaAgendaColaborador.setVisible(true);
+    }//GEN-LAST:event_exibirAgendaColaboradorActionPerformed
+
+    private void sairColaboradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairColaboradorActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_sairColaboradorActionPerformed
 
     /**
      * @param args the command line arguments
