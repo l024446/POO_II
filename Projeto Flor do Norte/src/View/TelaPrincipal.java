@@ -37,6 +37,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmPrincipal = new javax.swing.JMenu();
         novoCadastro = new javax.swing.JMenuItem();
+        jmLogin = new javax.swing.JMenuItem();
         sair = new javax.swing.JMenuItem();
         jmCliente = new javax.swing.JMenu();
         atualizarCadastroCliente = new javax.swing.JMenuItem();
@@ -68,6 +69,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jmPrincipal.add(novoCadastro);
+
+        jmLogin.setText("Login");
+        jmLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmLoginActionPerformed(evt);
+            }
+        });
+        jmPrincipal.add(jmLogin);
 
         sair.setText("Sair");
         sair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,6 +193,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_novoCadastroActionPerformed
 
     private void jmPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmPrincipalActionPerformed
+
+
     }//GEN-LAST:event_jmPrincipalActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
@@ -191,6 +202,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        TelaCadastroUsuario telacadastro; 
+        telacadastro = new TelaCadastroUsuario();
+        Component add = jDesktopPane1.add(telacadastro);
+        telacadastro.setVisible(true);
 
     }//GEN-LAST:event_jMenu2ActionPerformed
 
@@ -244,6 +259,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_sairColaboradorActionPerformed
 
+    private void jmLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmLoginActionPerformed
+        TelaLogin telaLogin; 
+        telaLogin = new TelaLogin();
+        Component add = jDesktopPane1.add(telaLogin);
+        telaLogin.setVisible(true);
+    }//GEN-LAST:event_jmLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +311,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jmCliente;
+    private javax.swing.JMenuItem jmLogin;
     private javax.swing.JMenu jmPrincipal;
     private javax.swing.JMenuItem novoCadastro;
     private javax.swing.JMenuItem sair;
